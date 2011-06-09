@@ -7,9 +7,34 @@
 //
 
 #import "WordListTableViewController.h"
+#import "DefinitionViewController.h"
 
+@interface WordListTableViewController()
+@property (retain, nonatomic) NSMutableDictionary *words;
+@property (retain, nonatomic) NSArray *sections;
+@end
 
 @implementation WordListTableViewController
+
+@synthesize words, sections;
+
+- (NSMutableDictionary *)words {
+    if (!words) {
+        NSURL *wordsURL = [NSURL URLWithString:@"http://192.168.1.100/~anton/vocabwords.txt"];
+        words = [[NSMutableDictionary dictionaryWithContentsOfURL:wordsURL] retain];
+    }
+    
+    return words;
+}
+
+- (NSArray *)sections {
+    if (!sections) {
+        sections = [[[self.words allKeys] sortedArrayUsingSelector:@selector(compare:)] retain];
+    }
+    
+    return sections;
+}
+    
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -22,6 +47,9 @@
 
 - (void)dealloc
 {
+    [words release];
+    [sections release];
+    
     [super dealloc];
 }
 
@@ -83,21 +111,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return self.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSArray *wordsInSection = [self.words objectForKey:[self.sections objectAtIndex:section]];
+    return wordsInSection.count;
+}
+
+- (NSString *)wordAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *wordsInSection = [self.words objectForKey:[self.sections objectAtIndex:indexPath.section]];
+    return [wordsInSection objectAtIndex:indexPath.row];;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"WordListTableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -105,6 +136,8 @@
     }
     
     // Configure the cell...
+    cell.textLabel.text = [self wordAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -131,6 +164,10 @@
     }   
 }
 */
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self.sections objectAtIndex:section];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -160,6 +197,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
+    DefinitionViewController *dvc = [[DefinitionViewController alloc] init];
+    dvc.word = [self wordAtIndexPath:indexPath];
+    [self.navigationController pushViewController:dvc animated:YES];
+    [dvc release];
 }
 
 @end

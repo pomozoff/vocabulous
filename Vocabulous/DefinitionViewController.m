@@ -11,6 +11,40 @@
 
 @implementation DefinitionViewController
 
+@synthesize word;
+
+- (NSURLRequest *)urlRequest {
+    NSString *urlString = @"http://google.com/dictionary";
+    if (self.word) {
+        urlString = [urlString stringByAppendingFormat:@"?langpair=en%%7Cru&q=%@", self.word];
+    }
+    
+    return [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+}
+
+- (void)setWord:(NSString *)newWord {
+    if (word != newWord) {
+        [word release];
+        word = [newWord copy];
+    }
+    
+    self.title = word;
+    if (webView.window) {
+        [webView loadRequest:[self urlRequest]];
+    }
+}
+
+- (void)loadView {
+    webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    webView.scalesPageToFit = YES;
+    self.view = webView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [webView loadRequest:[self urlRequest]];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

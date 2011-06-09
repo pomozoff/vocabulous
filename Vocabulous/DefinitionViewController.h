@@ -10,7 +10,10 @@
 
 
 @interface DefinitionViewController : UIViewController {
-    
+    UIWebView *webView;
+    NSString *word;
 }
+
+@property (copy, nonatomic) NSString *word;
 
 @end
