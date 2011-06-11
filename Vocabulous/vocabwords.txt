@@ -1,0 +1,140 @@
+{
+	A =	(
+		Alabama,
+		Arizona
+	);
+	B =	(
+		Banana
+	);
+	C =	(
+		Cameron,
+		City,
+		College
+	);
+	D = 	(
+		Developers,
+		Domain,
+		Doom,
+		Drama
+	);
+	E =	(
+		Emergency,
+		Empire,
+		Enron,
+		Error
+	);
+	F =	(
+		Fail,
+		Farmer,
+		Focus,
+		Format
+	);
+	G =	(
+		General,
+		German,
+		Grocery
+	);
+	H = 	(
+		Hands,
+		Help,
+		Hillary,
+		Hope
+	);
+	I =	(
+		Image,
+		Issue,
+		Ivory
+		
+	);
+	J =	(
+		Jam,
+		John,
+		Julia
+	);
+	K =	(
+		Kenny,
+		Knot,
+		Koala
+	);
+	L =	(
+		Lamer,
+		Lemon,
+		Loan
+	);
+	M =	(
+		Meat,
+		Mine,
+		Moscow,
+		Murder
+	);
+	N =	(
+		Napkin,
+		Neon,
+		Nice,
+		Note
+	);
+	O =	(
+		Object,
+		Order,
+		Overload
+	);
+	P =	(
+		Pampas,
+		Penelope,
+		Province
+	);
+	Q =	(
+		Quality,
+		Queen,
+		Quite
+	);
+	R =	(
+		Raise,
+		Ranger,
+		Remote,
+		Ring,
+		Rope
+	);
+	S =	(
+		Sensitivity,
+		Silence,
+		Solid
+	);
+	T =	(
+		Target,
+		Template,
+		Tortue
+	);
+	U =	(
+		Ugly,
+		Umbrella,
+		Urgent,
+		Utility
+	);
+	V =	(
+		Value,
+		Version,
+		Volume
+	);
+	W =	(
+		Wall,
+		Weather,
+		Wish,
+		Work
+	);
+	X =	(
+		Xenon,
+		Xerox,
+		Xylophone
+	);
+	Y =	(
+		Yard,
+		Year,
+		Yield,
+		Young
+	);
+	Z =	(
+		Zeal,
+		Zealot
+	);
+}

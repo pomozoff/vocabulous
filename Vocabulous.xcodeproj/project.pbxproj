@@ -16,6 +16,7 @@
 		3A1067F9139FD8EC0068D0B5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1067F7139FD8EC0068D0B5 /* MainWindow.xib */; };
 		3A106801139FD9750068D0B5 /* WordListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A106800139FD9750068D0B5 /* WordListTableViewController.m */; };
 		3A106804139FF5B90068D0B5 /* DefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A106803139FF5B90068D0B5 /* DefinitionViewController.m */; };
+		3AE3FBC213A3579700B660F2 /* vocabwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AE3FBC113A3579700B660F2 /* vocabwords.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3A106800139FD9750068D0B5 /* WordListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordListTableViewController.m; path = ../WordListTableViewController.m; sourceTree = "<group>"; };
 		3A106802139FF5B90068D0B5 /* DefinitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefinitionViewController.h; sourceTree = "<group>"; };
 		3A106803139FF5B90068D0B5 /* DefinitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefinitionViewController.m; sourceTree = "<group>"; };
+		3AE3FBC113A3579700B660F2 /* vocabwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocabwords.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		3A1067EC139FD8EC0068D0B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AE3FBC113A3579700B660F2 /* vocabwords.txt */,
 				3A1067ED139FD8EC0068D0B5 /* Vocabulous-Info.plist */,
 				3A1067EE139FD8EC0068D0B5 /* InfoPlist.strings */,
 				3A1067F1139FD8EC0068D0B5 /* Vocabulous-Prefix.pch */,
@@ -155,6 +158,7 @@
 			files = (
 				3A1067F0139FD8EC0068D0B5 /* InfoPlist.strings in Resources */,
 				3A1067F9139FD8EC0068D0B5 /* MainWindow.xib in Resources */,
+				3AE3FBC213A3579700B660F2 /* vocabwords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +277,7 @@
 				3A1067FE139FD8EC0068D0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
